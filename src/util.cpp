@@ -406,7 +406,7 @@ void doKillMode()
             // system("show_splash.sh exit");
 
             sleep(3);
-            if (system((" pgrep '" + std::string(AppToKill) + "' ").c_str()) == 0) {
+            if (system((" pgrep -f '" + std::string(AppToKill) + "' ").c_str()) == 0) {
                 printf("[GPTK]: Forcefully Killing: %s\n", AppToKill);
                 system((" pkill -9 -f '" + std::string(AppToKill) + "' ").c_str());
             }
@@ -418,7 +418,7 @@ void doKillMode()
 
             sleep(3);
 
-            if (system((" pgrep '" + std::string(AppToKill) + "' ").c_str()) == 0) {
+            if (system((" pgrep -f '" + std::string(AppToKill) + "' ").c_str()) == 0) {
                 printf("[GPTK]: Forcefully Killing: %s\n", AppToKill);
                 system((" sudo pkill -9 -f '" + std::string(AppToKill) + "' ").c_str());
             }
